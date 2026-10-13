@@ -1,0 +1,19 @@
+Name: stocksim-api
+Host: 0.0.0.0
+Port: 8080
+
+# 数据库配置
+Mysql:
+  DataSource: root:123root@tcp(10.15.144.63:3306)/stocksim?charset=utf8mb4&parseTime=true&loc=Local
+
+# JWT配置
+Auth:
+  SecretKey: stocksim-secret-key-2024
+  ExpireIn: 86400  # 24小时
+
+# 交易配置
+Trade:
+  FeeRate: 0.0003      # 手续费率 0.03%
+  MinFee: 5.0          # 最低手续费5元
+  TaxRate: 0.001       # 印花税率 0.1%（仅卖出收取）
+  MinQuantity: 100     # 最小交易数量（手）
